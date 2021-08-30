@@ -3,7 +3,7 @@ These scripts can be used to track prophage movement in cloesly related/clonal p
 
 The first script (R) generates bed files containing the genome coordinates of 5kb (or to end of contig) regions up and downstream of prophages identified in draft bacterial assemblies using prophage identification tools such as PHASTER (available at: https://phaster.ca/). Using 5kb regions should account for prophage boundary errors made by the prophage identification tools but can be increased to larger regions in the R script. Moreover, as prophages often sit at contig boundaries in draft assemblies (due to repetitive regions), the use of 5kb regions up and downstream of the prophages allows the tracking of prophage movement via the 5kb region opposite the contig boundary. 
 
-The second script (Python) functions by parsing out the 5kb flanking regions from the draft assemblies and blasting them against a complete assembled reference genome. The output is a blast table showing the genome coordinates of the flanking regions. If flanking regions map to similar reference genomic positions in all isolates then the prophages have likely not moved. However, if one or both of the flanking regions are in different positions, then the prophages may have moved (if only one region moves then the prophage has likely moved but the contig-proximate position may be within the prophage boundary).
+The second script (Python) parses out the 5kb flanking regions from the draft assemblies and blasts them against a complete assembled reference genome. The output is a blast table showing the genome coordinates of the flanking regions. If flanking regions map to similar reference genomic positions in all isolates then the prophages have likely not moved. However, if one or both of the flanking regions are in different positions, then the prophages may have moved (if only one region moves then the prophage has likely moved but the contig-proximate position may be within the prophage boundary).
 
 Importantly, the reference used must be very closely related to the isolates analysed such as an ancestral strain in an evolution experiment or an isolate from a clonal population. This is because mapping prophage flanking regions to a reference assumes that the reference and query sequences have conserved synteny. If the strains compared are not syntenic then the predicted prophage positions in the reference may be incorrect. 
 
@@ -31,7 +31,9 @@ The R script accepts as input a .csv file containing prophage coordinates from d
 * Start -> start coordinate of prophage in assembly
 * End -> end coordinate of prophage in assembly
 * Size -> full length of the contig in bp
-  
+
+The scripts were tested using prophage coordinates generated using the PHASTER tool (https://phaster.ca/) with draft assemblies constructed using Unicycler Illumina-only assembly (https://github.com/rrwick/Unicycler).
+
 The R script should be modified (See R script notes) to include your .csv with the prophage coordinates. Further, the output bed file name should be modified to include the prophage name.
 
 # Detecting prophage movement
