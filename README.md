@@ -5,7 +5,9 @@ The first script (R) generates bed files containing the genome coordinates of 5k
 
 The second script (Python) functions by parsing out the 5kb flanking regions from the draft assemblies and blasting them against a complete assembled reference genome. The output is a blast table showing the genome coordinates of the flanking regions. If flanking regions map to similar reference genomic positions in all isolates then the prophages have likely not moved. However, if one or both of the flanking regions are in different positions, then the prophages may have moved (if only one region moves then the prophage has likely moved but the contig-proximate position may be within the prophage boundary).
 
-Please feel free to use and adapt these scripts for your own data! If you have any issues then please create a GitHub issue.
+Importantly, the reference used must be very closely related to the isolates analysed such as an ancestral strain in an evolution experiment or an isolate from a clonal population. This is because mapping prophage flanking regions to a reference assumes that the reference and query sequences have conserved synteny. If the strains compared are not syntenic then the predicted prophage positions in the reference may be incorrect. 
+
+Please feel free to use and adapt these scripts for your own data! If you have any issues then please create a GitHub issue. Also, if you have any advice or comments to improve the scripts then please also add an issue and can discuss updating the scripts. Thank you and I hope this is useful!
 
 # Requirements
 
