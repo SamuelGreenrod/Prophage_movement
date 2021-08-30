@@ -42,8 +42,11 @@ The python script accepts three input files:
 ## Usage
 
 `-a, --assembly` path/to/bacterial_draft_assembly.fa
+
 `-b, --bedfile` path/to/prophage_bedfile_for_draft_assembly.bed
-`-db, --blastdb` path/to/reference.fna. This must be blast database made using 'makeblastdb -in reference.fna -db nucl'
+
+`-db, --blastdb` path/to/reference.fna. This must be blast database made using `makeblastdb -in reference.fna -db nucl`
+
 `-o, --output` output file containing blast results (add extension)
 
 Example command:
