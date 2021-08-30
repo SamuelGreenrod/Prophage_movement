@@ -21,7 +21,7 @@ The Python script was tested with the following dependencies but may work for ea
 
 # Installation
 
-At the moment there is no conda or pip installation. Therefore just download the scripts to the appropriate working directories.
+At the moment there is no conda or pip installation. Therefore, please just download the scripts to the appropriate working directories.
 
 # Generating bed files
 
