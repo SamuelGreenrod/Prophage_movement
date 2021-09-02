@@ -7,7 +7,7 @@ The second script (Python) parses out the 5kb flanking regions from the draft as
 
 * All flanking regions map to similar reference genomic positions (within one prophage length) in all isolates - the prophages have likely not moved. 
 * Flanking regions map to different reference genomic positions (but are still one prophage length apart) - the prophages have likely moved.
-* Contig boundary-proximate flanking regions are all in the same place but flanking regions on opposite side have moved - prophages have likely moved, but the contig-proximate region is within the prophage boundary (therefore maps to the prophage in the reference).
+* Contig boundary-proximate flanking regions are all in the same place but flanking regions on opposite side have moved - prophages have likely moved, but the contig boundary-proximate region may be within the prophage boundary (therefore maps to the prophage in the reference).
 
 Importantly, the reference used must be very closely related to the isolates analysed such as an ancestral strain in an evolution experiment or an isolate from a generally clonal population. This is because mapping prophage flanking regions to a reference assumes that the reference and query sequences are syntenic - if the isolates are not syntenic then the flanking regions may map to different parts of the reference even with no prophage movement. 
 
