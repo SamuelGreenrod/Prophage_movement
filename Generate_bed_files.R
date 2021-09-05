@@ -16,8 +16,8 @@ Prophage_table <- within(Prophage_table, Downstream_flank_end <- ifelse(Prophage
 
 
 # Make tables containing prophage flanking region start and end coordinates
-Upstream_flank <- Prophage_table[, c("ï..Isolate","Contig","Upstream_flank_start","Prophage_start")] # Make table containing Isolate, Contig name, start of upstream 5kb flanking region, and end of upstream 5kb flanking region
-Downstream_flank <- Prophage_table[, c("ï..Isolate","Contig","Downstream_flank_end","Prophage_end")]  # Make table containing Isolate, Contig name, start of upstream 5kb flanking region, and end of upstream 5kb flanking region
+Upstream_flank <- Prophage_table[, c("Ã¯..Isolate","Contig","Upstream_flank_start","Prophage_start")] # Make table containing Isolate, Contig name, start of upstream 5kb flanking region, and end of upstream 5kb flanking region
+Downstream_flank <- Prophage_table[, c("Ã¯..Isolate","Contig","Downstream_flank_end","Prophage_end")]  # Make table containing Isolate, Contig name, start of upstream 5kb flanking region, and end of upstream 5kb flanking region
 
 
 # Draft assemblies often have contigs in opposite orientations, meaning the up and downstream coordinates are reversed.
@@ -34,8 +34,8 @@ Downstream_flank_oriented$Prophage_end <- pmax(Downstream_flank$Downstream_flank
 
 # Bind together tables and combine the starts and ends of upstream and downstream regions into the same columns
 All_flanking_regions <- rbindlist(list(Upstream_flank_oriented,Downstream_flank_oriented),use.names = FALSE)
-names(data)[3] <- "Flank_start"
-names(data)[4] <- "Flank_end"
+names(All_flanking_regions)[3] <- "Flank_start"
+names(All_flanking_regions)[4] <- "Flank_end"
 
 
 # Generate bed files for each isolate containing the contig, flanking region start, and flanking region end of both the up and downstream flanking regions.
@@ -43,11 +43,11 @@ names(data)[4] <- "Flank_end"
 # Make a function to write the contig, flank start, and flank end to a .bed file. 
 # Change the "prophage" part of "prophage.bed" to the name of your prophage.
 Write_bed  = function(DF) {
-  write.table(DF[, -1],paste0(unique(DF$ï..Isolate),"prophage.bed"), sep="\t",col.names = F, row.names = F)
+  write.table(DF[, -1],paste0(unique(DF$Ã¯..Isolate),"prophage.bed"), sep="\t",col.names = F, row.names = F)
   return(DF)
 }
 
 # Group data by isolate (combine both up and downstream flanking regions) and run function to generate bed files.
-data %>% 
-  group_by(ï..Isolate) %>% 
+All_flanking_regions %>% 
+  group_by(Ã¯..Isolate) %>% 
   do(Write_bed(.))
