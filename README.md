@@ -53,7 +53,7 @@ The python script accepts three input files:
 
 `-b, --bedfile` path/to/prophage_bedfile_for_draft_assembly.bed
 
-`-db, --blastdb` path/to/reference.fna. This must be blast database made using `makeblastdb -in reference.fna -db nucl`
+`-db, --blastdb` path/to/reference.fna. This must be blast database made using `makeblastdb -in reference.fna -dbtype nucl`
 
 `-o, --output` output file containing blast results (add extension)
 
