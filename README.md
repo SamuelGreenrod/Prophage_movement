@@ -36,7 +36,9 @@ The R script accepts as input a .csv file containing prophage coordinates from d
 * Prophage_end -> end coordinate of prophage in assembly
 * Contig_length -> full length of the contig in bp
 
-The scripts were tested using prophage coordinates generated using the PHASTER tool (https://phaster.ca/) with draft assemblies constructed using Unicycler Illumina-only assembly (https://github.com/rrwick/Unicycler).
+The scripts were tested using prophage coordinates generated using the PHASTER tool (https://phaster.ca/) with draft assemblies constructed using Unicycler Illumina-only assembly (https://github.com/rrwick/Unicycler). Note that the PHASTER summary output for prophage coordinates is not user friendly - I just copy and paste the coordinates into an excel document.
+
+The best use of this is by looking at the same prophage in different isolates. I do this by identifying prophages, clustering them into groups using Mash (https://mash.readthedocs.io/en/latest/), and then looking at the positions of prophages within groups.
 
 The R script should be modified (See R script notes) to include your .csv with the prophage coordinates. Further, the output bed file name should be modified to include the prophage name.
 
