@@ -29,12 +29,12 @@ At the moment there is no conda or pip installation. Therefore, please just down
 
 # Generating bed files
 
-The R script accepts as input a .csv file containing prophage coordinates from draft assemblies. These should have five columns with the titles: "Isolate", "Contig", "Start", "End", "Size" where the columns contain:
+The R script accepts as input a .csv file containing prophage coordinates from draft assemblies. These should have five columns with the titles: "Isolate", "Contig", "Prophage_start", "Prophage_end", "Contig_length" where the columns contain:
 * Isolate -> name of bacterial assembly containing prophage
 * Contig -> contig number in bacterial assembly
-* Start -> start coordinate of prophage in assembly
-* End -> end coordinate of prophage in assembly
-* Size -> full length of the contig in bp
+* Prophage_start -> start coordinate of prophage in assembly
+* Prophage_end -> end coordinate of prophage in assembly
+* Contig_length -> full length of the contig in bp
 
 The scripts were tested using prophage coordinates generated using the PHASTER tool (https://phaster.ca/) with draft assemblies constructed using Unicycler Illumina-only assembly (https://github.com/rrwick/Unicycler).
 
