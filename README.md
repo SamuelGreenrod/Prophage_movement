@@ -63,7 +63,10 @@ Example command:
 ```
 python Prophage_movement.py --assembly assembly.fna --bedfile bedfile.bed --blastdb reference.fna --output Blast_output.txt
 ```
-
+Example command with loop through isolates
+```
+for i in $(cat Assemblies.txt); do python Prophage_movement.py --assembly Spades_assemblies/$i --bedfile ClusterA/$i"_ClusterA.bed" --blastdb RS-N.pacbio.fasta --output $i"_ClusterA_blast.txt"; done
+```
 # Output
 
 The output is a blast table with columns showing from left to right:
